@@ -15,9 +15,11 @@ function App() {
 
     fileReader.readAsText(file);
   };
-
+  
   return (
-    <div>
+    <div style={{
+      overflow: "hidden"
+    }}>
       <input
         type="file"
         onChange={(e) => {
@@ -25,7 +27,10 @@ function App() {
           handleFileChosen(file);
         }}
       />
+      <div>
+
       <pre>{JSON.stringify(hl7_parser(fileContent), null, 4)}</pre>
+      </div>
     </div>
   );
 }
