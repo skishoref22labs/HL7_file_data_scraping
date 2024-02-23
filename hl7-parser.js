@@ -13,12 +13,7 @@ export function hl7_parser(message) {
 
   // Patient/case Informations extracted from hl7 message
   const PID = groupedKeys["PID"] ? getPID(groupedKeys["PID"]?.[0]) : {};
-  // RGS - Results Grouping extracted from string
-  const RGS = groupedKeys["RGS"];
-  // AIG - Allergy/Intolerance extracted from string
-  const AIG = groupedKeys["AIG"];
-  // NTE - Notes extracted from string
-  const NTE = groupedKeys["NTE"];
+
   // IN1 - Individual Results extracted from string
   const IN1 = groupedKeys["IN1"]?.length ? getIN1(groupedKeys["IN1"]) : {};
 
